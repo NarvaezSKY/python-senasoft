@@ -149,6 +149,15 @@ df.loc[2, "peso"]=df.peso.mean()
 # fichero con las filas desconocidas llenadas como valor medio de su respectiva columna
 print(df)
 
+# agregar otra columna al dataframe
+# df['diabetes']=pd.Series([True, False, True, True, False, True, True, False, True, True, False, True, False, False])
+# print (df)
 
 
-df.to_csv(df.csv, sep=';', columns=True, index=True)
+# df.to_csv(df.csv, sep=';', columns=True, index=True)
+
+print('filtro en las filas de un dataframe')
+print(df[(df['sexo']=='H')])
+
+print('agrupacion de un dataframe')
+print(df.groupby('sexo').get_group('M'))
